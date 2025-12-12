@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
         template: { transformAssetUrls }
       }),
       quasar({
-        sassVariables: path.resolve(__dirname, './src/quasar-variables.sass')
+        // Remove sassVariables to avoid path duplication issues
       })
     ],
     resolve: {
