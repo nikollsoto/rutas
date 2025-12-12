@@ -13,7 +13,7 @@ export default defineConfig(({ mode }) => {
         template: { transformAssetUrls }
       }),
       quasar({
-        sassVariables: 'src/quasar-variables.sass'
+        // Remove sassVariables to avoid path duplication issues
       })
     ],
     resolve: {
@@ -35,7 +35,8 @@ export default defineConfig(({ mode }) => {
       }
     },
     server: {
-      port: 5173,
+      // use PORT from environment (Render sets this) or fallback to 5173
+      port: Number(process.env.PORT) || 5173,
       host: true,
       allowedHosts: [
         'proteccion-de-rutas.onrender.com',
@@ -46,7 +47,8 @@ export default defineConfig(({ mode }) => {
       cors: true
     },
     preview: {
-      port: 5173,
+      // use PORT from environment (Render sets this) or fallback to 5173
+      port: Number(process.env.PORT) || 5173,
       host: true,
       allowedHosts: [
         'proteccion-de-rutas.onrender.com',
