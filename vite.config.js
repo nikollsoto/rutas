@@ -13,8 +13,8 @@ export default defineConfig(({ mode }) => {
         template: { transformAssetUrls }
       }),
       quasar({
-        // Resolve absolute path to avoid duplicated 'src' on Render build environment
-        sassVariables: path.resolve(__dirname, 'src', 'quasar-variables.sass')
+        // Use relative path for sassVariables to avoid path duplication on Render
+        sassVariables: 'src/quasar-variables.sass'
       })
     ],
     resolve: {
