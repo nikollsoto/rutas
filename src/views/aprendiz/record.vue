@@ -182,7 +182,9 @@ const subirBitacora = (row) => {
 }
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
+@import '../../quasar-variables.sass';
+
 .seguimiento-page {
   background: #f5f7fb;
   min-height: 100vh;
